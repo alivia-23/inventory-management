@@ -1,0 +1,86 @@
+
+h1, h3 {
+  text-align: center;
+  color: DarkGreen;
+}
+
+.inventory-body {
+  border: 1px solid black;
+  background-color: lightblue;
+}
+
+.inventory-title {
+  height: 170px;
+}
+
+.items-list {
+  border: 1px solid black;
+  height: 450px;
+  background-color: LightCyan;
+}
+
+.auth {
+  display: inline;
+  border: 1px solid red;
+}
+
+.login {
+  text-align: center;
+}
+
+.logout {
+  text-align: right;
+}
+
+.status {
+  text-align: center;
+  color: red;
+  font-size: large;
+}
+
+.ougoing {
+  border: 1px solid black;
+  height: 120px;
+}
+
+.item-row:hover {
+  background-color: PaleGreen;
+}
+
+.items {
+  list-style: none;
+}
+
+.add-item-name {
+  width: 30%;
+  height: 50px;
+}
+
+.add-item-quantity {
+  width: 30%;
+  height: 50px;
+}
+
+.add-button {
+  width: 19%;
+  height: 50px;
+}
+
+.delete {
+  width: 3%;
+}
+
+.item-name {
+  width: 70%;
+  display: inline-block;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.update {
+  width: 7%;
+}
+
+.item-quantity {
+  width: 5%;
+}
