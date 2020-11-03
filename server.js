@@ -13,7 +13,7 @@ const items = {};
  */
 app.post('/session/:username' , express.json(), (req, res) => {
   const username = req.params.username;
-  if(!username || username.trim().length == 0 || username.indexOf(' ') >= 0 || username.indexOf('dog') >= 0) {
+  if (!username || username.trim().length == 0 || username.indexOf(' ') >= 0 || username.indexOf('dog') >= 0) {
     res.status(400).json({ error: 'bad-login' });
     return;
   }
@@ -87,14 +87,14 @@ app.put('/items/:id', express.json(), (req, res) => {
   const uid = req.cookies.uid;
   const quantity = req.body.quantity;
   const id = req.params.id;
-  if(!login.users[uid]) {
+  if (!login.users[uid]) {
     res.status(403).send({error: `missing-uid`});
     return;
-  } if(!items[id]) {
+  } if (!items[id]) {
     res.status(400).json({ error: 'missing-item-id' });
     return;
   }
-  else if(isNaN(quantity) || quantity < 0) {
+  else if (isNaN(quantity) || quantity < 0) {
     res.status(400).json({ error: 'invalid-quanity' });
     return;
   }
@@ -112,7 +112,7 @@ app.put('/items/:id', express.json(), (req, res) => {
     return;
   }
   const id = req.params.id;
-  if(!items[id]) {
+  if (!items[id]) {
     res.status(400).json({ error: 'missing-item-id' });
     return;
   }
