@@ -13,9 +13,9 @@ function addUser(username) {
 }
 
 function removeUser(uid) {
-  if(users[uid]) {
+  if (users[uid]) {
    users[uid].active = false;
- }
+  }
 }
 
 const login = {
