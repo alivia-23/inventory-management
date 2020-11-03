@@ -1,16 +1,8 @@
 # REST & SPA
 
-* start from the up-to-date master branch (`git checkout master; git pull origin master`)
-* Create a feature branch named 'js-rest-spa' (`git checkout -b js-rest-spa`)
-* modify the files in this directory to have the require features
-* add, commit, and push the branch to github
-* Create a PR to merge to master
-* Be sure to include the TA(s) and I as reviewers.  
-* Due by 11:59pm (PT) Sun Mar 15
-
 ## Goals and Requirements
 
-This is similar to the `js-dom` project, except the storage will be managed server-side and the page (a SPA) will communicate via fetch() calls to REST services you write.  There is also a login requirement.
+This is similar to the `js-dom` project, except the storage will be managed server-side and the page (a SPA) will communicate via fetch() calls to REST services.  There is also a login requirement.
 
 Despite the login requirement, there is a single inventory and all users will view/modify the same inventory.
 
@@ -54,10 +46,10 @@ All updates to the inventory will make RESTful service calls
   - Trying to add an item with an empty name will return an error from the service
     - The page shouldn't allow this to be tried, but the service can still be called that way
 - Pressing "Update" will call `/items/:itemid` to update the quantity - the new item object should be returned like when the item is added
-  - You can still re-render the whole list afterward, but not you only got the updated info for a single item
-  - You can use a `data-item-id` HTML attribute to associate the item id with the individual row
-  - You should NOT have an event listener on every row/button.  Use event bubbling/propagation.
-  - This assignment does not resolve collisions between many users.  That is fine for this assignment.
+  - Can still re-render the whole list afterward
+  - Used a `data-item-id` HTML attribute to associate the item id with the individual row
+  - Did NOT have an event listener on every row/button.  Used event bubbling/propagation.
+  - This work does not resolve collisions between many users.  
     - Example: The page shows there are 3 cats.  Another user changes that to 2 cats on the page they see, but this page still shows 3.  If you then update with a value of "4", Cats would update to "4", not to "3".
   - Trying to modify an item that was deleted by another page should remove the item from this page and show an error message
 - Pressing "X" on an item will call `/items/:itemid`
@@ -82,37 +74,26 @@ All error messages are removed from display when another action is taken
 - All services that return JSON data should have the `content-type` header of `application/json` (hint: res.json() does this for you)
 - All model logic should be in a separate file from your server file
 - Manually reloading the page will refresh the page but show the current data
-- Your code can be used by running `npm install`, `node server.js`, and going to `http://localhost:3000/`
+- This code can be used by running `npm install`, `node server.js`, and going to `http://localhost:3000/`
 
 ## Logic
-- Do NOT use the DOM to store state (use an object to hold the inventory and render the view from that state object whenever it updates)
-  - You may use "data-(whatever)" values to store indexes, ids, or other ways to connect the elements to their data sources
-  - Do NOT use "data-(whatever)" values to hold more than identifiers.  (Don't hold the quantity, for example)
-- Use an IIFE on the client-side JS and do not pollute the global scope
-- Achieve any visual differences from adding/removing classes
-  - Do NOT add "style" attributes
+-  NOT used the DOM to store state (use an object to hold the inventory and render the view from that state object whenever it updates)
+  - Used "data-(whatever)" values to store indexes, ids, or other ways to connect the elements to their data sources
+  - NOT used "data-(whatever)" values to hold more than identifiers.  
+- Used an IIFE on the client-side JS and do not pollute the global scope
+- Achieved any visual differences from adding/removing classes
+  - NOT added "style" attributes
   - disabling/enabling a button is not a visual difference, so that is not done via a class change
-- The page should only reload if the user themselves does it, not because of your code
-
-## Visuals
-- Make your application reasonably attractive
-- Include enough space around items
-- Have elements reasonably aligned
-- Make it clear which buttons apply to which items
-  - hint: having the background color of the row the mouse is over change can make it clear which buttons apply to that row
+- The page should only reload if the user themselves does it, not because of the code
 
 ## Additional Requirements
-- Follow the best practices described in class, in the code-review doc, and in the best-practices in the readings
-- Use Semantic HTML as much as you can
+- Followed the best practices described in class, in the code-review doc, and in the best-practices in the readings
+- Used Semantic HTML as much as you can
 - Make sure your .js file(s) are clear and organized, not just a jumble of code
 - Follow any suggestions previously given to you in code reviews
-- Do NOT use localStorage, sessionStorage, IndexedDB, cookies, or other forms of client-side storage, except a cookie to hold a `uid` value
-- Do NOT interact with the browser url, including hash fragment
-- Do NOT include files in your PR that are outside the assignment (no IDE configs, `node_modules/`, etc)
-* Do not use external JS other than express itself
-* Do not use external CSS libraries
-* You may not use floats to do more than manage flowing text with images
-* You may not use HTML tables or CSS table layouts
-* You may not use CSS preprocessors, minifiers, or other tools to modify your CSS
-  * I and the TA(s) must be able to read it easily
+- Did NOT use localStorage, sessionStorage, IndexedDB, cookies, or other forms of client-side storage, except a cookie to hold a `uid` value
+- Did NOT interact with the browser url, including hash fragment
+- Did NOT include files in your PR that are outside the assignment (no IDE configs, `node_modules/`, etc)
+* Did not use external JS other than express itself
+* Did not use external CSS libraries
 
