@@ -89,7 +89,6 @@ All error messages are removed from display when another action is taken
 ## Additional Requirements
 - Followed the best practices described in class, in the code-review doc, and in the best-practices in the readings
 - Used Semantic HTML as much as you can
-- Make sure your .js file(s) are clear and organized, not just a jumble of code
 - Follow any suggestions previously given to you in code reviews
 - Did NOT use localStorage, sessionStorage, IndexedDB, cookies, or other forms of client-side storage, except a cookie to hold a `uid` value
 - Did NOT interact with the browser url, including hash fragment
