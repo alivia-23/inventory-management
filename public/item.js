@@ -44,7 +44,7 @@
       .catch( () => Promise.reject( { error: "network-error"} ))
       .then( convertResponse )
       .then( items => {
-        renderItems(items);
+        renderItems( items );
         updateStatus('');
       })
       .catch( err => {
@@ -68,19 +68,19 @@
     statusEl.innerText = message;
   }
 
-   function renderItems(items) {
+   function renderItems( items ) {
      itemsEl.innerHTML = '';
      items.map( item => {
-       renderItem(item);
+       renderItem( item );
      });
    }
 
-  function renderItem(item) {
-    const listItem = createItemEl(item);
-    itemsEl.appendChild(listItem);
+  function renderItem( item ) {
+    const listItem = createItemEl( item );
+    itemsEl.appendChild( listItem );
   }
 
-  function createItemEl(item) {
+  function createItemEl( item ) {
     const listItem = document.createElement("li");
     const listItemId = "item-row-" + item.id;
     listItem.setAttribute("id", listItemId);
@@ -92,7 +92,7 @@
     return listItem;
   }
 
-  itemsEl.addEventListener('click', function(event) {
+  itemsEl.addEventListener('click', function( event ) {
     const id = event.target.dataset.id;
     if(event.target.classList.contains('update')) {
       const quantityElemId = '#item-quantity-' + id;
@@ -131,7 +131,7 @@
       .catch( () => Promise.reject( { error: 'network-error' }) )
       .then( convertResponse )
       .then( items => {
-        renderItems(items);
+        renderItems( items );
         updateStatus('');
       })
       .catch( err => {
@@ -168,22 +168,22 @@
     });
   });
 
-  newItemNameEl.addEventListener('keyup', function (event) {
+  newItemNameEl.addEventListener('keyup', function ( event ) {
     const text = event.target.value;
     addButtonEl.disabled = !text || text.trim() === "";
   });
 
-  userNameEl.addEventListener('keyup', function (event) {
+  userNameEl.addEventListener('keyup', function ( event ) {
     const text = event.target.value;
     loginButtonEl.disabled = !text || text.trim() === "";
   });
 
-  function convertResponse(response) {
-    if(response.ok) {
+  function convertResponse( response ) {
+    if ( response.ok ) {
       return response.json();
     }
     return response.json()
-    .then( err => Promise.reject(err) );
+    .then( err => Promise.reject( err ) );
   }
 
   // on load
@@ -194,7 +194,7 @@
     .catch( () => Promise.reject( { error: 'network-error' }) )
     .then( convertResponse )
     .then( items => {
-      renderItems(items);
+      renderItems( items );
   });
 
 
